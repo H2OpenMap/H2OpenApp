@@ -1,0 +1,119 @@
+
+.ui-icon-waterwell:after{
+    background-image: url("images/my-icons-png/512_large_2.2.png");
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+    border-radius:0px!important;
+    -moz-border-radius:0px!important;
+    -webkit-border-radius:0px!important;
+    -ms-border-radius:0px!important;
+    -o-border-radius:0px!important;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.ui-icon-hand:after {
+    background: url("images/my-icons-png/512_hand_2.1.png");
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+    border-radius:0px!important;
+    -moz-border-radius:0px!important;
+    -webkit-border-radius:0px!important;
+    -ms-border-radius:0px!important;
+    -o-border-radius:0px!important;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.ui-icon-flywheel:after {
+    background: url("images/my-icons-png/512_fly_2.1.png");
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+    border-radius:0px!important;
+    -moz-border-radius:0px!important;
+    -webkit-border-radius:0px!important;
+    -ms-border-radius:0px!important;
+    -o-border-radius:0px!important;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.ui-icon-pedal:after {
+    background: url("images/my-icons-png/512_pedal_2.1.png");
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+    border-radius:0px!important;
+    -moz-border-radius:0px!important;
+    -webkit-border-radius:0px!important;
+    -ms-border-radius:0px!important;
+    -o-border-radius:0px!important;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.ui-icon-watertap:after {
+    background: url("images/my-icons-png/512_tap_2.1.png");
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+    border-radius:0px!important;
+    -moz-border-radius:0px!important;
+    -webkit-border-radius:0px!important;
+    -ms-border-radius:0px!important;
+    -o-border-radius:0px!important;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+/*
+.ui-header .ui-title, .ui-header-fixed .ui-btn-right, .ui-header-fixed .ui-btn-left {
+    margin-top: 1em;
+}
+
+.ui-listview .ui-li-has-thumb>img:first-child, .ui-listview .ui-li-has-thumb>.ui-btn>img:first-child, .ui-listview .ui-li-has-thumb .ui-li-thumb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-height: 6em;
+    max-width: 6em;
+}
+*/
+input[type="hidden"] {
+    visibility: hidden;\
+}
+
+.ui-page
+{
+    background: transparent !important;
+}
+body {
+    background: url("images/bg/SON_00230_ott.jpg");
+    background-size: 101% auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:center center;
+}
+
+/*Background Full Screen Image if the document is smaller than 300 pixels wide*/
+@media screen and (max-width: 300px) {
+   body {
+        background: url("images/bg/SON_00230_ott.jpg");
+        background-size: 101% auto;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position:center center;
+   }
+}
+@media screen and (orientation: portrait) {
+   body {
+        background: url("images/bg/SON_00230_ott.jpg");
+        background-size: auto 101%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position:center center;
+   }
+}
+
+.red-btn {
+   background: red !important;
+   color:#ffffff !important;
+}​

@@ -1,0 +1,258 @@
+<html>
+
+<head>
+    <title>Exercise 3</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" src="js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/jsdb_data.js"></script>
+</head>
+<body>
+<!--  PAGE 0 -->
+    <div data-role="page" id="page0" data-add-back-btn="true">
+        <!--  PAGE 0 -->
+        <div data-role="header">
+            <h1>H2OpenMap</h1>
+            <a href="#page3" class="ui-btn ui-corner-all ui-shadow ui-icon-cloud ui-btn-icon-notext">upload</a>
+            <a href="" class="ui-btn ui-corner-all ui-shadow ui-icon-bullets ui-btn-icon-notext" onclick="showRecords()">list</a>    
+        </div>
+        <div data-role="content">
+            <div class="ui-grid-b ui-responsive">
+                <div class="ui-block-a"><a href="#page1" class="ui-btn ui-shadow ui-corner-all ui-icon-flywheel ui-btn-icon-top ui-nodisc-icon" onclick="presetForm(1)">flywheel</a></div>
+                <div class="ui-block-b"><a href="#page1" class="ui-btn ui-shadow ui-corner-all ui-icon-hand ui-btn-icon-top ui-nodisc-icon" onclick="presetForm(2)">lever</a></div>
+                <div class="ui-block-c"><a href="#page1" class="ui-btn ui-shadow ui-corner-all ui-icon-pedal ui-btn-icon-top ui-nodisc-icon" onclick="presetForm(3)">pedal</a></div>
+            </div>
+            <div class="ui-grid-a ui-responsive">
+                <div class="ui-block-a"><a href="#page1" class="ui-btn ui-shadow ui-corner-all ui-icon-waterwell ui-btn-icon-top ui-nodisc-icon" onclick="presetForm(4)">traditional</a></div>
+                <div class="ui-block-b"><a href="#page1" class="ui-btn ui-shadow ui-corner-all ui-icon-watertap ui-btn-icon-top ui-nodisc-icon" onclick="presetForm(5)">watertap</a></div>
+            </div>
+            <div class="ui-grid-a ui-responsive">
+                <div class="ui-block-a"><a href="#page2" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets ui-btn-icon-top ui-nodisc-icon ui-alt-icon">list</a></div>
+                <div class="ui-block-b"><a href="#page3" class="ui-btn ui-shadow ui-corner-all ui-icon-cloud ui-btn-icon-top ui-nodisc-icon ui-alt-icon">upload</a></div>
+            </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a"><a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-top ui-nodisc-icon ui-alt-icon">settings</a></div>
+            </div>
+        </div>
+    </div>
+<!--  PAGE 1 -->
+    <div data-role="page" id="page1" data-add-back-btn="true">
+        <!--  PAGE 1  -->
+        <div data-role="header">
+            <h1>add records</h1>
+            <a href="#page3" class="ui-btn ui-corner-all ui-shadow ui-icon-cloud ui-btn-icon-notext">upload</a>
+            <a href="" class="ui-btn ui-corner-all ui-shadow ui-icon-bullets ui-btn-icon-notext" onclick="showRecords()">list</a>
+        </div>
+        <div data-role="content">
+            <form method="get" id="myForm">
+                <label for="id">id</label>
+                <input type="text" id="id" disabled='disabled'>
+                <div class="ui-field-contain">
+                    <label for="source">source</label>
+                    <input type="text" id="source" placeholder="source" disabled="disabled">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="s_date">date</label>
+                    <input type="text" id="s_date" placeholder="survey date">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="gps">set position</label>
+                    <input type="button" id="gps" value="GPS" data-inline="false" data-icon="navigation" data-iconpos="right" onclick="getLocation()">
+                    <br>
+                    <label for='lat'>lat.</label>
+                    <input type='text' id='lat' disabled='disabled'>
+                    <br>
+                    <label for='lon'>lon.</label>
+                    <input type='text' id='lon' disabled='disabled'>
+                </div>
+                <div class="ui-field-contain">
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+                        <legend>take photo</legend>
+                        <input type="checkbox" id="edit_ph" data-cacheval="">
+                        <label for="edit_ph">edit</label>
+                        <input type="button" value="Photo" data-inline="false" data-icon="camera" data-iconpos="right" onclick="getPhoto($('input[id=edit_ph]').attr('data-cacheval'))">
+                    </fieldset>
+                    <br>
+                    <img id="image" style="max-width: 100%; height: auto;">
+                    <input type='text' id='photo'>
+                    <textarea id="exif" disabled='disabled'></textarea>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="wateres" class="select">water resource type</label>
+                    <select id="wateres" onchange="wrForm(this.value)">>
+                        <option value="large">large diameter</option>
+                        <option value="small">small diameter</option>
+                        <option value="tap">water tap</option>
+                        <option value="other">other</option>
+                    </select>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="top" class="select">water well top</label>
+                    <select id="top">
+                        <option value="open">open</option>
+                        <option value="close">close</option>
+                        <option value="can be opened">can be opened</option>
+                    </select>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="pump" class="select">pump</label>
+                    <select id="pump" onchange="puForm(this.value)">
+                        <option value="manual">manual</option>
+                        <option value="powered">powered</option>
+                        <option value="no pump">no pump</option>
+                    </select>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="pump_manual" class="select">pump manual</label>
+                    <select id="pump_manual" onchange="pmForm(this.value)">
+                        <option value="lever">lever</option>
+                        <option value="flywheel">flywheel</option>
+                        <option value="pedal">pedal</option>
+                        <option value="no pump">no pump</option>
+                        <option value="other">other pump</option>
+                    </select>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="other_pump">other pump</label>
+                    <input type="text" id="other_pump" data-clear-btn="true" placeholder="one word description" maxlength="50">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="operator">operator</label>
+                    <input type="text" id="operator" data-clear-btn="true" placeholder="owner name if known" maxlength="50">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="operator_type" class="select">operator type</label>
+                    <select id="operator_type">
+                        <option value="unknown">unknown</option>
+                        <option value="public">public</option>
+                        <option value="private">private</option>
+                        <option value="government">government</option>
+                        <option value="NGO">NGO</option>
+                        <option value="community">community</option>
+                    </select>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="condition" class="select">condition</label>
+                    <select id="condition">
+                        <option value="unknown">unknown</option>
+                        <option value="good">good</option>
+                        <option value="fair">fair</option>
+                        <option value="deficient">deficient</option>
+                    </select>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="disused">disused</label>
+                    <select id="disused" data-role="flipswitch">
+                        <option value="no">no</option>
+                        <option value="yes">yes</option>
+                    </select>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="abandoned">abandoned</label>
+                    <select id="abandoned" data-role="flipswitch">
+                        <option value="no">no</option>
+                        <option value="yes">yes</option>
+                    </select>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="access" class="select">access</label>
+                    <select id="access">
+                        <option value="unknown">unknown</option>
+                        <option value="yes">yes</option>
+                        <option value="private">private</option>
+                        <option value="permissive">permissive</option>
+                        <option value="multifamily">multifamily</option>
+                        <option value="no">no</option>
+                    </select>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="water_presence" class="select">water presence</label>
+                    <select id="water_presence">
+                        <option value="unknown">unknown</option>
+                        <option value="yes">yes</option>
+                        <option value="no">no</option>
+                    </select>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="drinking_water" class="select">drinking water</label>
+                    <select id="drinking_water">
+                        <option value="unknown">unknown</option>
+                        <option value="yes">yes</option>
+                        <option value="no">no</option>
+                    </select>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="fee">fee</label>
+                    <select id="fee" data-role="flipswitch">
+                        <option value="no">no</option>
+                        <option value="yes">yes</option>
+                    </select>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="fixme">fixme</label>
+                    <select id="fixme" data-role="flipswitch">
+                        <option value="no">no</option>
+                        <option value="yes">yes</option>
+                    </select>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="note">note</label>
+                    <textarea id="note" maxlength="500" placeholder="additional informations"></textarea>
+                </div>
+                <div id=btns_1></div>
+            </form>
+        </div>
+    </div>
+<!--  PAGE 2 -->
+    <div data-role="page" id="page2" data-add-back-btn="true">
+        <div data-role="header">
+            <h1>view all</h1>
+            <a href="#page3" class="ui-btn ui-corner-all ui-shadow ui-icon-cloud ui-btn-icon-notext">upload</a>
+            <a href="#page0" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-right ui-btn-icon-notext" onclick="resetForm()">home</a>
+        </div>
+        <div data-role="content">
+            <ul id="results" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="Search  item..."></ul>
+            <div id=btns_2></div>
+        </div>
+    </div>
+<!--  PAGE 3 -->
+    <div data-role="page" id="page3" data-add-back-btn="true">
+        <!--  PAGE 3  -->
+        <div data-role="header">
+            <h1>upload to server</h1>
+
+            <a href="" class="ui-btn ui-corner-all ui-shadow ui-icon-bullets ui-btn-icon-notext" onclick="showRecords()">list</a>
+            <a href="#page0" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-right ui-btn-icon-notext">home</a>
+        </div>
+        <div data-role="content">
+            <button id="sendData" type=submit class="ui-btn ui-shadow ui-corner-all">send Data</button>
+            <input type="button" id='create_csv' value="create CSV" data-icon="edit" data-iconpos="right" onclick="generateCsv()" />
+            <input type="text" id="my_text" value='' disabled='disabled' placeholder="add some text"/>
+            <input type="button" id="saveFile_csv" value="upload" data-icon="cloud" data-iconpos="right" />
+            <input type="button" id='list_remote' value="list remote" data-icon="bullets" data-iconpos="right" onclick="listRemote()" />
+            <div id="message"></div>
+            <div id="contents"></div>
+            <div id="remote" data-role="collapsibleset" data-inset="true"></div>
+        </div>
+    </div>
+<!--  PAGE 4 -->
+    <div data-role="page" id="page4" data-add-back-btn="true">
+        <div data-role="header">
+            <h1>view all</h1>
+            <a href="#page3" class="ui-btn ui-corner-all ui-shadow ui-icon-cloud ui-btn-icon-notext">upload</a>
+            <a href="#page0" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-right ui-btn-icon-notext" onclick="resetForm()">home</a>
+        </div>
+        <div data-role="content">
+            <div id="show" data-inset="true"></div>
+            <div id="btns_3"></div>
+        </div>
+    </div>
+</body>
+<script src="cordova.js"></script>
+</html>

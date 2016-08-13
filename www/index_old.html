@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>Exercise 3</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" src="js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/js.js"></script>
+</head>
+    <body>
+    	<div data-role="page" id="page1">  <!--  PAGE 1  -->
+            <div data-role="header">
+                <h1>add records</h1>
+                <a href="#page2" class="ui-btn ui-corner-all ui-shadow ui-icon-bullets ui-btn-icon-notext">list</a>
+                <a href="#page1" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-right ui-btn-icon-notext" onclick="resetForm()">home</a>
+            </div>
+            <div data-role="content">
+                <form method="get"  id="myForm">
+                    <div class="ui-field-contain">
+                    	<input type="text" id="id" />
+                        <label for="username">Name</label>
+                        <input id="username" type="text" placeholder="First and last name" required autofocus >
+                	</div>
+                    <div class="ui-field-contain">
+                    	<label for="useremail">Email</label>
+                        <input id="useremail" type="text" placeholder="example@domain.com" required >
+                    </div>
+                    <div id=btns_1></div>
+                </form>
+            </div>
+        </div>
+
+    <div data-role="page" id="page2" data-add-back-btn="true">  <!--  PAGE 2  -->
+        <div data-role="header">
+            <h1>view all</h1>
+            <a href="#page3" class="ui-btn ui-corner-all ui-shadow ui-icon-cloud ui-btn-icon-notext">send</a>
+            <a href="#page1" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-right ui-btn-icon-notext" onclick="resetForm()">home</a>
+        </div>
+        <div data-role="content">
+            <div id="results"></div>
+            <div id=btns_2></div>
+        </div>
+    </div>
+
+<!--
+        <h1>CONTACT FORM</h1>
+        <form id="mycontact">
+            <fieldset>
+                <legend>Your details</legend>
+                <ol>
+                    <li>
+                        <label for="username">Name</label>
+                        <input id="username" type="text" placeholder="First and last name" required autofocus >
+                        <input type="hidden" id="id" />
+                    </li>
+                    <li>
+                        <label for="useremail">Email</label>
+                        <input id="useremail" type="text" placeholder="example@domain.com" required >
+                    </li>
+                </ol>
+            </fieldset>
+            <button id="btnReset" type=submit>Reset</button>
+            <button id="submitButton" type="submit">SAVE</button>
+            <button id="btnUpdate" type=submit>UPDATE</button>
+            <button id="btnDrop" type=submit>DROP</button>
+        </form>
+        <br />
+        <div id="results"></div>
+
+-->
+    </body>
+        <script src="cordova.js"></script>
+
+</html>
