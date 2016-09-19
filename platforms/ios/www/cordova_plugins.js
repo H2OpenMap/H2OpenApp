@@ -300,6 +300,31 @@ module.exports = [
         "clobbers": [
             "plugins.crop"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-network-information/www/network.js",
+        "id": "cordova-plugin-network-information.network",
+        "pluginId": "cordova-plugin-network-information",
+        "clobbers": [
+            "navigator.connection",
+            "navigator.network.connection"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+        "id": "cordova-plugin-network-information.Connection",
+        "pluginId": "cordova-plugin-network-information",
+        "clobbers": [
+            "Connection"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-googleplus/www/GooglePlus.js",
+        "id": "cordova-plugin-googleplus.GooglePlus",
+        "pluginId": "cordova-plugin-googleplus",
+        "clobbers": [
+            "window.plugins.googleplus"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -315,7 +340,9 @@ module.exports.metadata =
     "cordova-plugin-file": "4.2.0",
     "cordova-plugin-file-transfer": "1.5.1",
     "cordova-plugin-splashscreen": "3.2.2",
-    "cordova-plugin-crop": "0.1.0"
+    "cordova-plugin-crop": "0.1.0",
+    "cordova-plugin-network-information": "1.2.1",
+    "cordova-plugin-googleplus": "4.0.8"
 }
 // BOTTOM OF METADATA
 });

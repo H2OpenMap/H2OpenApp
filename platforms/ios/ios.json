@@ -47,6 +47,18 @@
                         {
                             "xml": "<feature name=\"CropPlugin\"><param name=\"ios-package\" value=\"CTCrop\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"ios-package\" value=\"CDVConnection\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"GooglePlus\"><param name=\"ios-package\" value=\"GooglePlus\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://accounts.google.com/*\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -57,6 +69,18 @@
                         {
                             "xml": "<string />",
                             "count": 2
+                        }
+                    ],
+                    "CFBundleURLTypes": [
+                        {
+                            "xml": "<array><dict><key>CFBundleTypeRole</key><string>Editor</string><key>CFBundleURLName</key><string>com.rasmata.h2openapp</string><key>CFBundleURLSchemes</key><array><string>com.rasmata.h2openapp</string></array></dict><dict><key>CFBundleTypeRole</key><string>Editor</string><key>CFBundleURLName</key><string>REVERSED_CLIENT_ID</string><key>CFBundleURLSchemes</key><array><string>271244803697-s4mp2eu4ru7g02js08cfu7jm2sdq9992.apps.googleusercontent.com</string></array></dict></array>",
+                            "count": 1
+                        }
+                    ],
+                    "LSApplicationQueriesSchemes": [
+                        {
+                            "xml": "<array><string>com.rasmata.h2openapp</string><string>271244803697-s4mp2eu4ru7g02js08cfu7jm2sdq9992.apps.googleusercontent.com</string><string>com-google-gidconsent</string><string>com-google-gidconsent-google</string><string>com.google.gppconsent.2.4.0</string><string>com.google.gppconsent.2.4.1</string></array>",
+                            "count": 1
                         }
                     ]
                 }
@@ -96,6 +120,13 @@
         },
         "cordova-plugin-crop": {
             "PACKAGE_NAME": "com.yourname.workshop"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.rasmata.h2openapp"
+        },
+        "cordova-plugin-googleplus": {
+            "REVERSED_CLIENT_ID": "271244803697-s4mp2eu4ru7g02js08cfu7jm2sdq9992.apps.googleusercontent.com",
+            "PACKAGE_NAME": "com.rasmata.h2openapp"
         }
     },
     "dependent_plugins": {},
@@ -400,6 +431,31 @@
             "clobbers": [
                 "plugins.crop"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-network-information/www/network.js",
+            "id": "cordova-plugin-network-information.network",
+            "pluginId": "cordova-plugin-network-information",
+            "clobbers": [
+                "navigator.connection",
+                "navigator.network.connection"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+            "id": "cordova-plugin-network-information.Connection",
+            "pluginId": "cordova-plugin-network-information",
+            "clobbers": [
+                "Connection"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-googleplus/www/GooglePlus.js",
+            "id": "cordova-plugin-googleplus.GooglePlus",
+            "pluginId": "cordova-plugin-googleplus",
+            "clobbers": [
+                "window.plugins.googleplus"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -413,6 +469,8 @@
         "cordova-plugin-file": "4.2.0",
         "cordova-plugin-file-transfer": "1.5.1",
         "cordova-plugin-splashscreen": "3.2.2",
-        "cordova-plugin-crop": "0.1.0"
+        "cordova-plugin-crop": "0.1.0",
+        "cordova-plugin-network-information": "1.2.1",
+        "cordova-plugin-googleplus": "4.0.8"
     }
 }

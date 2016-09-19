@@ -1,58 +1,84 @@
 <html>
-
 <head>
-    <title>Exercise 3</title>
+    <title>H2OpenMap</title>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="">
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" type="text/css" href="css/icon-pack-custom.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script type="text/javascript" src="js/jquery-2.2.2.min.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
     <script type="text/javascript" src="js/jsdb_data.js"></script>
+    <script type="text/javascript" src="js/jsdb_user.js"></script>
+    <script type="text/javascript">
+        document.addEventListener("deviceready", onDeviceReady, false);
+        $(function () {
+            $("[data-role=panel]").enhanceWithin().panel();
+        });
+    </script>
 </head>
 <body>
-<!--  PAGE 0 -->
+<!--  PANEL MAIN MENU-->
+    <div data-role="panel" id="panel_menu" data-position="left" data-display="overlay" class="ui-panel ui-panel-position-left ui-panel-display-overlay ui-body-a ui-panel-animate ui-panel-closed">
+        <p align="center"><strong>main menu</strong></p>
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#page0" class="ui-btn ui-icon-tag ui-btn-icon-right ui-nodisc-icon ui-alt-icon">add new</a></li>
+            <li><a href="#page2" class="ui-btn ui-icon-bullets ui-btn-icon-right ui-nodisc-icon ui-alt-icon" onclick="loadAndReset()">list all</a></li>
+            <li><a href="#page3" class="ui-btn ui-icon-upload ui-btn-icon-right ui-nodisc-icon ui-alt-icon">upload</a></li>
+            <li id="us_1"><a href="#" class="ui-btn ui-icon-user2 ui-btn-icon-right ui-nodisc-icon ui-alt-icon" onclick="showUser(1);">user profile</a></li>
+            <!-- <li id="us_2"><a href="#" class="ui-btn ui-icon-user2 ui-btn-icon-right ui-nodisc-icon ui-alt-icon" onclick="usr_showRecords();">show all users</a></li> -->
+            <li id="login"><a href="#page6" class="ui-btn ui-icon-login ui-btn-icon-right ui-nodisc-icon ui-alt-icon">login or register</a></li>
+            <li id="logout"><a href="#page6" class="ui-btn ui-icon-logout ui-btn-icon-right ui-nodisc-icon ui-alt-icon" onclick="dropUsers()">logout</a></li>
+            <li><a href="#page7" class="ui-btn ui-icon-faq ui-btn-icon-right ui-nodisc-icon ui-alt-icon">FAQ </a></li>
+            <li><a href="#page8" class="ui-btn ui-icon-terms ui-btn-icon-right ui-nodisc-icon ui-alt-icon">terms and use</a></li>
+        </ul>
+        <a href="#" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-right ui-nodisc-icon ui-alt-icon" data-rel="close">close</a>
+    </div>
+<!--  PAGE 0 PRESETS-->
     <div data-role="page" id="page0" data-add-back-btn="true">
         <!--  PAGE 0 -->
         <div data-role="header">
-            <h1>H2OpenMap</h1>
-            <a href="#page3" class="ui-btn ui-corner-all ui-shadow ui-icon-cloud ui-btn-icon-notext">upload</a>
-            <a href="" class="ui-btn ui-corner-all ui-shadow ui-icon-bullets ui-btn-icon-notext" onclick="showRecords()">list</a>    
+            <h1>chose a preset</h1>
+            <a href="#panel_menu" class="ui-mm-icon ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext ui-nodisc-icon ui-alt-icon">main menu</a>
         </div>
         <div data-role="content">
             <div class="ui-grid-b ui-responsive">
-                <div class="ui-block-a"><a href="#page1" class="ui-btn ui-shadow ui-corner-all ui-icon-flywheel ui-btn-icon-top ui-nodisc-icon" onclick="presetForm(1)">flywheel</a></div>
-                <div class="ui-block-b"><a href="#page1" class="ui-btn ui-shadow ui-corner-all ui-icon-hand ui-btn-icon-top ui-nodisc-icon" onclick="presetForm(2)">lever</a></div>
-                <div class="ui-block-c"><a href="#page1" class="ui-btn ui-shadow ui-corner-all ui-icon-pedal ui-btn-icon-top ui-nodisc-icon" onclick="presetForm(3)">pedal</a></div>
+                <div class="ui-block-a"><a href="#page1" class="ui-btn ui-corner-all ui-icon-flywheel ui-btn-icon-top ui-nodisc-icon" onclick="presetForm(1);">flywheel</a></div>
+                <div class="ui-block-b"><a href="#page1" class="ui-btn ui-corner-all ui-icon-hand ui-btn-icon-top ui-nodisc-icon" onclick="presetForm(2); getPhoto('false')">lever</a></div>
+                <div class="ui-block-c"><a href="#page1" class="ui-btn ui-corner-all ui-icon-pedal ui-btn-icon-top ui-nodisc-icon" onclick="presetForm(3); getPhoto('false')">pedal</a></div>
             </div>
             <div class="ui-grid-a ui-responsive">
-                <div class="ui-block-a"><a href="#page1" class="ui-btn ui-shadow ui-corner-all ui-icon-waterwell ui-btn-icon-top ui-nodisc-icon" onclick="presetForm(4)">traditional</a></div>
-                <div class="ui-block-b"><a href="#page1" class="ui-btn ui-shadow ui-corner-all ui-icon-watertap ui-btn-icon-top ui-nodisc-icon" onclick="presetForm(5)">watertap</a></div>
+                <div class="ui-block-a"><a href="#page1" class="ui-btn ui-corner-all ui-icon-waterwell ui-btn-icon-top ui-nodisc-icon" onclick="presetForm(4); getPhoto('false')">traditional</a></div>
+                <div class="ui-block-b"><a href="#page1" class="ui-btn ui-corner-all ui-icon-watertap ui-btn-icon-top ui-nodisc-icon" onclick="presetForm(5); getPhoto('false')">watertap</a></div>
             </div>
-            <div class="ui-grid-a ui-responsive">
-                <div class="ui-block-a"><a href="#page2" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets ui-btn-icon-top ui-nodisc-icon ui-alt-icon">list</a></div>
-                <div class="ui-block-b"><a href="#page3" class="ui-btn ui-shadow ui-corner-all ui-icon-cloud ui-btn-icon-top ui-nodisc-icon ui-alt-icon">upload</a></div>
+            <!-- <div class="ui-grid-a ui-responsive">
+                <div class="ui-block-a"><a href="#page2" class="ui-btn ui-corner-all ui-icon-bullets ui-btn-icon-top ui-nodisc-icon ui-alt-icon">list</a></div>
+                <div class="ui-block-b"><a href="#page3" class="ui-btn ui-corner-all ui-icon-cloud ui-btn-icon-top ui-nodisc-icon ui-alt-icon">upload</a></div>
             </div>
             <div class="ui-grid-solo">
-                <div class="ui-block-a"><a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-top ui-nodisc-icon ui-alt-icon">settings</a></div>
+                <div class="ui-block-a"><a href="#page5" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-top ui-nodisc-icon ui-alt-icon">register</a></div>
             </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a"><a href="#page6" class="ui-btn ui-corner-all ui-icon-lock ui-btn-icon-top ui-nodisc-icon ui-alt-icon">log in</a></div>
+            </div> -->
         </div>
     </div>
-<!--  PAGE 1 -->
+<!--  PAGE 1 FORM -->
     <div data-role="page" id="page1" data-add-back-btn="true">
         <!--  PAGE 1  -->
         <div data-role="header">
-            <h1>add records</h1>
-            <a href="#page3" class="ui-btn ui-corner-all ui-shadow ui-icon-cloud ui-btn-icon-notext">upload</a>
-            <a href="" class="ui-btn ui-corner-all ui-shadow ui-icon-bullets ui-btn-icon-notext" onclick="showRecords()">list</a>
+            <h1>add item</h1>
+            <a href="#panel_menu" class="ui-mm-icon ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext ui-nodisc-icon ui-alt-icon">main menu</a>
         </div>
-        <div data-role="content">
+        <div data-role="content" class="ui-nodisc-icon ui-alt-icon">
             <form method="get" id="myForm">
-                <label for="id">id</label>
-                <input type="text" id="id" disabled='disabled'>
+                <div class="ui-field-contain">
+                    <label for="id">id</label>
+                    <input type="text" id="data_id" disabled='disabled'>
+                </div>
                 <div class="ui-field-contain">
                     <label for="source">source</label>
                     <input type="text" id="source" placeholder="source" disabled="disabled">
@@ -63,29 +89,32 @@
                 </div>
                 <div class="ui-field-contain">
                     <label for="gps">set position</label>
-                    <input type="button" id="gps" value="GPS" data-inline="false" data-icon="navigation" data-iconpos="right" onclick="getLocation()">
+                    <input type="button" id="gps" value="GPS" class="ui-nodisc-icon ui-alt-icon" data-inline="false" data-icon="navigation" data-iconpos="right" onclick="setPosition()">
                     <br>
                     <label for='lat'>lat.</label>
                     <input type='text' id='lat' disabled='disabled'>
                     <br>
                     <label for='lon'>lon.</label>
                     <input type='text' id='lon' disabled='disabled'>
+                    <br>
+                    <label for='acc'>accuracy</label>
+                    <input type='text' id='acc' disabled='disabled'>
                 </div>
                 <div class="ui-field-contain">
                     <fieldset data-role="controlgroup" data-type="horizontal">
                         <legend>take photo</legend>
-                        <input type="checkbox" id="edit_ph" data-cacheval="">
-                        <label for="edit_ph">edit</label>
-                        <input type="button" value="Photo" data-inline="false" data-icon="camera" data-iconpos="right" onclick="getPhoto($('input[id=edit_ph]').attr('data-cacheval'))">
+                        <input type="checkbox" id="edit" data-cacheval="" oncheck="alert('editing image reset all EXIF metadata as GPS Location and time stamp')">
+                        <label for="edit">edit</label>
+                        <input type="button" id="takePhoto" value="Photo" data-inline="false" class="ui-nodisc-icon ui-alt-icon" data-icon="camera" data-iconpos="right" onclick="getPhoto($('input[id=edit]').attr('data-cacheval'))">
                     </fieldset>
                     <br>
-                    <img id="image" style="max-width: 100%; height: auto;">
+                    <img id="image" style="max-width: 100%; height: auto;" src="" class="ui-corner-all ">
                     <input type='text' id='photo'>
                     <textarea id="exif" disabled='disabled'></textarea>
                 </div>
                 <div class="ui-field-contain">
                     <label for="wateres" class="select">water resource type</label>
-                    <select id="wateres" onchange="wrForm(this.value)">>
+                    <select id="wateres" onchange="wrForm(this.value)">
                         <option value="large">large diameter</option>
                         <option value="small">small diameter</option>
                         <option value="tap">water tap</option>
@@ -102,7 +131,7 @@
                 </div>
                 <div class="ui-field-contain">
                     <label for="pump" class="select">pump</label>
-                    <select id="pump" onchange="puForm(this.value)">
+                    <select id="pump" onchange="//puForm(this.value)">
                         <option value="manual">manual</option>
                         <option value="powered">powered</option>
                         <option value="no pump">no pump</option>
@@ -110,7 +139,7 @@
                 </div>
                 <div class="ui-field-contain">
                     <label for="pump_manual" class="select">pump manual</label>
-                    <select id="pump_manual" onchange="pmForm(this.value)">
+                    <select id="pump_manual" onchange="//pmForm(this.value)">
                         <option value="lever">lever</option>
                         <option value="flywheel">flywheel</option>
                         <option value="pedal">pedal</option>
@@ -209,48 +238,159 @@
             </form>
         </div>
     </div>
-<!--  PAGE 2 -->
+<!--  PAGE 2 LIST ALL -->
     <div data-role="page" id="page2" data-add-back-btn="true">
         <div data-role="header">
             <h1>view all</h1>
-            <a href="#page3" class="ui-btn ui-corner-all ui-shadow ui-icon-cloud ui-btn-icon-notext">upload</a>
-            <a href="#page0" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-right ui-btn-icon-notext" onclick="resetForm()">home</a>
+            <a href="#panel_menu" class="ui-mm-icon ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext ui-nodisc-icon ui-alt-icon">main menu</a>
         </div>
         <div data-role="content">
             <ul id="results" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="Search  item..."></ul>
             <div id=btns_2></div>
         </div>
     </div>
-<!--  PAGE 3 -->
-    <div data-role="page" id="page3" data-add-back-btn="true">
+<!--  PAGE 3 UPLOADS -->
+    <div data-role="page" id="page3" data-add-back-btn="true" data-cache="false">
         <!--  PAGE 3  -->
         <div data-role="header">
-            <h1>upload to server</h1>
-
-            <a href="" class="ui-btn ui-corner-all ui-shadow ui-icon-bullets ui-btn-icon-notext" onclick="showRecords()">list</a>
-            <a href="#page0" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-right ui-btn-icon-notext">home</a>
+            <h1>backup data</h1>
+            <a href="#panel_menu" class="ui-mm-icon ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext ui-nodisc-icon ui-alt-icon">main menu</a>
         </div>
         <div data-role="content">
-            <button id="sendData" type=submit class="ui-btn ui-shadow ui-corner-all">send Data</button>
-            <input type="button" id='create_csv' value="create CSV" data-icon="edit" data-iconpos="right" onclick="generateCsv()" />
-            <input type="text" id="my_text" value='' disabled='disabled' placeholder="add some text"/>
-            <input type="button" id="saveFile_csv" value="upload" data-icon="cloud" data-iconpos="right" />
-            <input type="button" id='list_remote' value="list remote" data-icon="bullets" data-iconpos="right" onclick="listRemote()" />
+            <div id="up_btn"></div>
+            <br>
+            <div id="counter" style="text-align: center;"></div>
+            <div class="meter">
+                <span id="progressbar" style="width: 0%"></span>
+            </div>
+            <br>
+            <div data-role="collapsible" data-iconpos="right" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                <h4>view log</h4>
+                <p id="log"></p>
+            </div>
             <div id="message"></div>
-            <div id="contents"></div>
-            <div id="remote" data-role="collapsibleset" data-inset="true"></div>
+            <!-- <div id="contents"></div> -->
         </div>
     </div>
-<!--  PAGE 4 -->
+<!--  PAGE 4 SHOW ONE RECORD -->
     <div data-role="page" id="page4" data-add-back-btn="true">
         <div data-role="header">
-            <h1>view all</h1>
-            <a href="#page3" class="ui-btn ui-corner-all ui-shadow ui-icon-cloud ui-btn-icon-notext">upload</a>
-            <a href="#page0" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-right ui-btn-icon-notext" onclick="resetForm()">home</a>
+            <h1>view item</h1>
+            <a href="#panel_menu" class="ui-mm-icon ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext ui-nodisc-icon ui-alt-icon">main menu</a>
         </div>
         <div data-role="content">
             <div id="show" data-inset="true"></div>
             <div id="btns_3"></div>
+        </div>
+    </div>
+<!--  PAGE 5 REGISTER NEW USER -->
+    <div data-role="page" id="page5" data-add-back-btn="true">
+        <div data-role="header">
+            <h1>register new user</h1>
+            <a href="#panel_menu" class="ui-mm-icon ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext ui-nodisc-icon ui-alt-icon">main menu</a>
+        </div>
+        <div data-role="content">
+            <form method="get" id="userForm">
+                <div class="ui-field-contain">
+                    <p style="text-align: center; color: red;"><strong>* mandatory fields</strong></p>
+                    <label for="us_id">id</label>
+                    <input type="text" id="us_id" disabled='disabled'>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="usname">user name<span style="color:red;">*</span> (H2OpenMap source field)</label>
+                    <input type="text" id="usname" placeholder="user name" class="required" minlength="5" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="pass">password<span style="color:red;">*</span></label>
+                    <input type="password" id="pass" placeholder="min 8 chr" class="required" minlength="5" autocomplete="off" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="conf_pass">confirm pass<span style="color:red;">*</span></label>
+                    <input type="password" id="conf_pass" placeholder="must mactch password" class="required" minlength="5" autocomplete="off" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="email">email<span style="color:red;">*</span></label>
+                    <input type="email" id="email" placeholder="example@host.com" class="required email" minlength="5" value="">
+                </div>
+                <br>
+                <p style="text-align: center;"><strong>optional fields</strong></p>
+                <div class="ui-field-contain">
+                    <label for="name">name</label>
+                    <input type="text" id="name" data-clear-btn="true" placeholder="given name" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="famname">family name</label>
+                    <input type="text" id="famname" data-clear-btn="true" placeholder="family name" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="us_photo">photo</label>
+                    <input type="text" id="us_photo" data-clear-btn="true" placeholder="photo" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="org">organization</label>
+                    <input type="text" id="org" data-clear-btn="true" placeholder="Organizatio you work for" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="web_page">web page</label>
+                    <input type="url" id="web_page" data-clear-btn="true" placeholder="www.example.it" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="osm_acc">OSM account</label>
+                    <input type="text" id="osm_acc" data-clear-btn="true" placeholder="insert your Open Street Map account" value="osm">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="us_note">note</label>
+                    <textarea id="us_note" maxlength="100" data-clear-btn="true" placeholder="additional informations">info</textarea>
+                </div>
+                <button id="signup" onclick="singUp(); return false;">Create an Account</button>
+            </form>
+        </div>
+    </div>
+<!--  PAGE 6 LOGIN -->
+    <div data-role="page" id="page6" data-add-back-btn="true">
+        <div data-role="header">
+            <h1>login</h1>
+            <a href="#panel_menu" class="ui-mm-icon ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext ui-nodisc-icon ui-alt-icon">main menu</a>
+        </div>
+        <div data-role="content">
+            <form method="get" id="userLogin">
+                <div class="ui-field-contain">
+                    <label for="l_email">email<span style="color: red;"> * </span></label>
+                    <input type="email" id="l_email" placeholder="example@host.com" class="required email" minlength="5" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="l_pass">password<span style="color: red;"> * </span></label>
+                    <input type="password" id="l_pass" placeholder="min 8 chr" autocomplete="off" value="">
+                </div>
+                <button id="login" onclick="logIn()">login</button>
+            </form>
+            <p align="center">or</p>
+            <a href="#page5" class="ui-btn ui-corner-all" data-rel="close">register new user</a>
+        </div>
+    </div>
+<!--  PAGE 7 FAQ -->
+    <div data-role="page" id="page7" data-add-back-btn="true">
+        <div data-role="header">
+            <h1>FAQ</h1>
+            <a href="#panel_menu" class="ui-mm-icon ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext ui-nodisc-icon ui-alt-icon">main menu</a>
+        </div>
+        <div data-role="content">
+            <h1>issues</h1>
+            <ul>
+                <li>getUser() rimosso dalla sequenza di start -> form accessibile -> decidere cosa fare</li>
+                <li>verificare il comportamento del LogIn/Out, SignIn/Out</li>
+                <li>verificare sequenze inserimento/modifica dati</li>
+                <li>se inserisco mail errate o password che non coincidono, mando i dat a db e li salva.... correggere
+        </div>
+    </div>
+<!--  PAGE 8 TERMS -->
+    <div data-role="page" id="page8" data-add-back-btn="true">
+        <div data-role="header">
+            <h1>terms and use</h1>
+            <a href="#panel_menu" class="ui-mm-icon ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext ui-nodisc-icon ui-alt-icon">main menu</a>
+        </div>
+        <div data-role="content">
+            
         </div>
     </div>
 </body>

@@ -36,6 +36,13 @@
         },
         "cordova-plugin-crop": {
             "PACKAGE_NAME": "com.yourname.workshop"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.rasmata.h2openapp"
+        },
+        "cordova-plugin-googleplus": {
+            "REVERSED_CLIENT_ID": "271244803697-s4mp2eu4ru7g02js08cfu7jm2sdq9992.apps.googleusercontent.com",
+            "PACKAGE_NAME": "com.rasmata.h2openapp"
         }
     },
     "dependent_plugins": {

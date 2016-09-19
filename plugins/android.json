@@ -36,6 +36,9 @@
         },
         "cordova-plugin-crop": {
             "PACKAGE_NAME": "com.rasmata.h2openapp"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.rasmata.h2openapp"
         }
     },
     "dependent_plugins": {

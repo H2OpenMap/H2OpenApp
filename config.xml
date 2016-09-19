@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.rasmata.h2openapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>H2OpenApp alfa 3</name>
+<widget id="com.rasmata.h2openapp" version="0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>H2OpenMap</name>
     <description>
         A mapping application for water resource made by Francesco Giunta - Rasmata Onlus - CC BY-NC 4.0 
     </description>
@@ -16,7 +16,6 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <!-- <allow-navigation href="*" /> -->
     <allow-navigation href="http://*/*" />
     <allow-navigation href="https://*/*" />
     <allow-navigation href="data:*" />
@@ -24,15 +23,24 @@
     <engine name="android" spec="~5.1.1" />
     <platform name="android">
         <allow-intent href="market:*" />
-        <icon src="res/icon.png" />
-        <splash density="port-ldpi" height="426" src="res/screen/android/splash_port_ldpi.png" width="320" />
-        <splash density="port-mdpi" height="470" src="res/screen/android/splash_port_mdpi.png" width="320" />
-        <splash density="port-hdpi" height="640" src="res/screen/android/splash_port_hdpi.png" width="480" />
-        <splash density="port-xhdpi" height="960" src="res/screen/android/splash_port_xhdpi.png" width="720" />
-        <splash density="land-ldpi" height="320" src="res/screen/android/splash_land_ldpi.png" width="426" />
-        <splash density="land-mdpi" height="320" src="res/screen/android/splash_land_mdpi.png" width="470" />
-        <splash density="land-hdpi" height="480" src="res/screen/android/splash_land_hdpi.png" width="640" />
-        <splash density="land-xhdpi" height="720" src="res/screen/android/splash_land_xhdpi.png" width="960" />
+<!--    <icon src="res/android/drawable-ldpi/ic_launcher.png" density="ldpi" /> -->
+        <icon src="res/android/drawable-mdpi/ic_launcher.png" density="mdpi" />
+        <icon src="res/android/drawable-hdpi/ic_launcher.png" density="hdpi" />
+        <icon src="res/android/drawable-xhdpi/ic_launcher.png" density="xhdpi" />
+<!--    <icon src="res/android/drawable-xxhdpi/ic_launcher.png" density="xxhdpi" />
+        <icon src="res/android/drawable-xxxhdpi/ic_launcher.png" density="xxxhdpi" /> -->
+<!--    <splash density="port-ldpi" height="320" src="res/screen/android/splash_square_xxxhdpi.png" width="200" /> -->
+<!--    <splash density="port-mdpi" height="480" src="res/screen/android/splash_square_xxxhdpi.png" width="320" /> -->
+        <splash density="port-hdpi" height="800" src="res/screen/android/splash_square_xxxhdpi.png" width="480" />
+        <splash density="port-xhdpi" height="1280" src="res/screen/android/splash_square_xxxhdpi.png" width="720" />
+<!--    <splash density="port-xxhdpi" height="1600" src="res/screen/android/splash_square_xxxhdpi.png" width="960" />
+        <splash density="port-xxxxhdpi" height="1920" src="res/screen/android/splash_square_xxxhdpi.png" width="1280" /> -->
+<!--    <splash density="land-ldpi" height="200" src="res/screen/android/splash_square_xxxhdpi.png" width="320" /> -->
+<!--    <splash density="land-mdpi" height="320" src="res/screen/android/splash_square_xxxhdpi.png" width="480" /> -->
+        <splash density="land-hdpi" height="480" src="res/screen/android/splash_square_xxxhdpi.png" width="640" />
+        <splash density="land-xhdpi" height="720" src="res/screen/android/splash_square_xxxhdpi.png" width="960" />
+<!--    <splash density="land-xxhdpi" height="960" src="res/screen/android/splash_square_xxxhdpi.png" width="960" />
+        <splash density="land-xxxhdpi" height="1280" src="res/screen/android/splash_square_xxxhdpi.png" width="960" /> --> 
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -54,12 +62,13 @@
         <icon height="100" src="res/ios/icon-50@2x.png" width="100" />
     </platform>
     <preference name="AutoHideSplashScreen" value="true" />
-    <preference name="FadeSplashScreenDuration" value="4000" />
-    <preference name="SplashScreenDelay" value="3000" />
-    <preference name="FadeSplashScreen" value="false" />
+    <preference name="FadeSplashScreenDuration" value="1000" />
+    <preference name="SplashScreenDelay" value="5000" />
+    <preference name="FadeSplashScreen" value="true" />
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="CameraUsesGeolocation" value="true" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <preference name="ShowTitle" value="H2OpenMap" />    
 </widget>

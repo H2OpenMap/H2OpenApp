@@ -1,0 +1,41 @@
+ /*!
+* jQuery Mobile Icon Pack - Font Awesome version 1.4.0
+*
+* Copyright 2013 Andy Matthews
+* http://andyMatthews.net
+* Released under the GPL/MIT license.
+*
+*/
+
+.ui-icon-cloud-upload:after { background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%20Tiny%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11-tiny.dtd%22%3E%3Csvg%20version%3D%221.1%22%20baseProfile%3D%22tiny%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2216px%22%20height%3D%2216px%22%20viewBox%3D%220%200%20500%20500%22%20xml%3Aspace%3D%22preserve%22%3E%20%3Cpath%20d%3D%22M357.143%20241.071q0-3.906-2.511-6.417l-98.214-98.214q-2.511-2.511-6.417-2.511t-6.417%202.511l-97.935%2097.935q-2.79%203.348-2.79%206.696%200%203.906%202.511%206.417t6.417%202.511h62.5v98.214q0%203.627%202.651%206.278t6.278%202.651h53.571q3.627%200%206.278-2.651t2.651-6.278v-98.214h62.5q3.627%200%206.278-2.651t2.651-6.278zM535.714%20321.429q0%2044.364-31.39%2075.753t-75.753%2031.39h-303.571q-51.618%200-88.309-36.691t-36.691-88.309q0-36.272%2019.531-66.964t52.456-46.038q-0.558-8.371-0.558-11.998%200-59.152%2041.853-101.004t101.004-41.853q43.527%200%2079.66%2024.274t52.595%2064.453q19.81-17.299%2046.317-17.299%2029.576%200%2050.502%2020.926t20.926%2050.502q0%2021.206-11.44%2038.504%2036.272%208.649%2059.57%2037.807t23.298%2066.546z%22%20fill%3D%22%23ffffff%22%20%2F%3E%3C%2Fsvg%3E') }
+.ui-nosvg .ui-icon-cloud-upload:after { background-image: url('png_images/cloud-upload.png'); }
+
+
+.ui-icon-power-off:after { background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%20Tiny%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11-tiny.dtd%22%3E%3Csvg%20version%3D%221.1%22%20baseProfile%3D%22tiny%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2216px%22%20height%3D%2216px%22%20viewBox%3D%220%200%20500%20500%22%20xml%3Aspace%3D%22preserve%22%3E%20%3Cpath%20d%3D%22M428.571%20250q0%2043.527-17.020%2083.147t-45.759%2068.359-68.359%2045.759-83.147%2017.020-83.147-17.020-68.359-45.759-45.759-68.359-17.020-83.147q0-50.781%2022.461-95.703t63.198-75.335q11.998-8.929%2026.646-6.976t23.298%2013.951q8.929%2011.719%206.836%2026.367t-13.812%2023.577q-27.344%2020.647-42.271%2050.502t-14.927%2063.616q0%2029.018%2011.3%2055.385t30.552%2045.62%2045.62%2030.552%2055.385%2011.3%2055.385-11.3%2045.62-30.552%2030.552-45.62%2011.3-55.385q0-33.761-14.927-63.616t-42.271-50.502q-11.719-8.929-13.812-23.577t6.836-26.367q8.649-11.998%2023.438-13.951t26.507%206.976q40.737%2030.413%2063.198%2075.335t22.461%2095.703zM250%2035.714v178.571q0%2014.509-10.603%2025.112t-25.112%2010.603-25.112-10.603-10.603-25.112v-178.571q0-14.509%2010.603-25.112t25.112-10.603%2025.112%2010.603%2010.603%2025.112z%22%20fill%3D%22%23ffffff%22%20%2F%3E%3C%2Fsvg%3E') }
+.ui-nosvg .ui-icon-power-off:after { background-image: url('png_images/power-off.png'); }
+
+
+.ui-icon-tint:after { background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%20Tiny%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11-tiny.dtd%22%3E%3Csvg%20version%3D%221.1%22%20baseProfile%3D%22tiny%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2216px%22%20height%3D%2216px%22%20viewBox%3D%220%200%20500%20500%22%20xml%3Aspace%3D%22preserve%22%3E%20%3Cpath%20d%3D%22M142.857%20321.429q0-10.044-5.581-19.252-0.279-0.279-4.325-6.278t-7.115-10.603-6.976-12.277-5.859-14.090q-1.116-4.464-5.859-4.464t-5.859%204.464q-1.953%206.417-5.859%2014.090t-6.976%2012.277-7.115%2010.603-4.325%206.278q-5.581%209.208-5.581%2019.252%200%2014.788%2010.463%2025.251t25.251%2010.463%2025.251-10.463%2010.463-25.251zM285.714%20285.714q0%2059.152-41.853%20101.004t-101.004%2041.853-101.004-41.853-41.853-101.004q0-40.458%2022.601-76.73%201.674-2.511%2017.438-25.251t28.181-42.132%2027.762-49.665%2023.159-56.222q2.511-8.371%209.487-13.114t14.23-4.743%2014.37%204.743%209.347%2013.114q7.813%2025.949%2023.159%2056.222t27.762%2049.665%2028.181%2042.132%2017.438%2025.251q22.601%2035.435%2022.601%2076.73z%22%20fill%3D%22%23ffffff%22%20%2F%3E%3C%2Fsvg%3E') }
+.ui-nosvg .ui-icon-tint:after { background-image: url('png_images/tint.png'); }
+
+
+.ui-icon-unlock-alt:after { background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%20Tiny%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11-tiny.dtd%22%3E%3Csvg%20version%3D%221.1%22%20baseProfile%3D%22tiny%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2216px%22%20height%3D%2216px%22%20viewBox%3D%220%200%20500%20500%22%20xml%3Aspace%3D%22preserve%22%3E%20%3Cpath%20d%3D%22M294.643%20214.286q11.161%200%2018.973%207.813t7.813%2018.973v160.714q0%2011.161-7.813%2018.973t-18.973%207.813h-267.857q-11.161%200-18.973-7.813t-7.813-18.973v-160.714q0-11.161%207.813-18.973t18.973-7.813h8.929v-89.286q0-51.618%2036.691-88.309t88.309-36.691%2088.309%2036.691%2036.691%2088.309q0%207.254-5.301%2012.556t-12.556%205.301h-17.857q-7.254%200-12.556-5.301t-5.301-12.556q0-29.576-20.926-50.502t-50.502-20.926-50.502%2020.926-20.926%2050.502v89.286h205.357z%22%20fill%3D%22%23ffffff%22%20%2F%3E%3C%2Fsvg%3E') }
+.ui-nosvg .ui-icon-unlock-alt:after { background-image: url('png_images/unlock-alt.png'); }
+
+.ui-icon-logout:after { background-image: url('images/svg/logout.svg') }
+
+.ui-icon-login:after { background-image: url('images/svg/login.svg') }
+
+.ui-icon-upload:after { background-image: url('images/svg/upload.svg') }
+
+.ui-icon-user2:after { background-image: url('images/svg/user2.svg') }
+
+.ui-icon-faq:after { background-image: url('images/svg/faq.svg') }
+
+.ui-icon-terms:after { background-image: url('images/svg/terms.svg') }
+
+.ui-icon-sign-in:after { background-image: url('images/svg/key-tool.svg') }
+
+
+
+

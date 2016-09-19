@@ -43,6 +43,10 @@
                         {
                             "xml": "<feature name=\"CropPlugin\"><param name=\"android-package\" value=\"com.jeduan.crop.CropPlugin\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -60,6 +64,10 @@
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
                             "count": 1
                         }
                     ],
@@ -111,6 +119,9 @@
             "PACKAGE_NAME": "com.yourname.workshop"
         },
         "cordova-plugin-crop": {
+            "PACKAGE_NAME": "com.rasmata.h2openapp"
+        },
+        "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.rasmata.h2openapp"
         }
     },
@@ -360,6 +371,21 @@
             "clobbers": [
                 "plugins.crop"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-network-information/www/network.js",
+            "id": "cordova-plugin-network-information.network",
+            "clobbers": [
+                "navigator.connection",
+                "navigator.network.connection"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+            "id": "cordova-plugin-network-information.Connection",
+            "clobbers": [
+                "Connection"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -373,6 +399,7 @@
         "cordova-plugin-file": "4.2.0",
         "cordova-plugin-file-transfer": "1.5.1",
         "cordova-plugin-splashscreen": "3.2.2",
-        "cordova-plugin-crop": "0.1.0"
+        "cordova-plugin-crop": "0.1.0",
+        "cordova-plugin-network-information": "1.2.1"
     }
 }

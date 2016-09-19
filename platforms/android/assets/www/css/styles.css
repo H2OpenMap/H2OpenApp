@@ -64,21 +64,13 @@
     box-shadow: none;
     -webkit-box-shadow: none;
 }
-/*
-.ui-header .ui-title, .ui-header-fixed .ui-btn-right, .ui-header-fixed .ui-btn-left {
-    margin-top: 1em;
+
+input[type="hidden"] {
+    visibility: hidden;
 }
 
-.ui-listview .ui-li-has-thumb>img:first-child, .ui-listview .ui-li-has-thumb>.ui-btn>img:first-child, .ui-listview .ui-li-has-thumb .ui-li-thumb {
-    position: absolute;
-    left: 0;
-    top: 0;
-    max-height: 6em;
-    max-width: 6em;
-}
-*/
-input[type="hidden"] {
-    visibility: hidden;\
+.hidden {
+    display: none;
 }
 
 .ui-page
@@ -114,6 +106,72 @@ body {
 }
 
 .red-btn {
-   background: red !important;
+   background: orangered !important;
    color:#ffffff !important;
 }​
+
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+    text-shadow: 0 0px 0 #f3f3f3;
+}
+
+progress::-webkit-progress-bar-value {
+  -webkit-appearance: none;
+  background: orangered;
+}
+
+.meter { 
+    height: 20px;  /* Can be anything */
+    position: relative;
+    background: #ccc;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: rgb(51, 136, 204);
+  background-image: linear-gradient(
+    center bottom,
+    rgb(43,194,83) 37%,
+    rgb(84,240,84) 69%
+  );
+  box-shadow: 
+    inset 0 2px 9px  rgba(255,255,255,0.3),
+    inset 0 -2px 6px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+#custom-border-radius .ui-btn-icon-notext.ui-corner-all {
+    -webkit-border-radius: .3125em;
+    border-radius: .3125em;
+}
+
+.ui-btn-icon-notext.ui-corner-all.ui-mm-icon {
+    border: 0px;
+    background-color: rgba(233, 233, 233 .9);
+}
+
+.h2om-color {
+    background-color: rgb(113, 201,242);
+    background-color: #71C9F2;
+}
+
+.rasmata-color {
+    background-color: rgb(244,149,14);
+    background-color: #F4950E;
+}
+
+.jquery-mob-color {
+    background-color: rgb(51,136,204);
+    background-color: #38c;
+}
+
