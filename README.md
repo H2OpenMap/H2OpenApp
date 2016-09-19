@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #H2OpenApp
 
 Apache Cordova mobile app to off-line collecting drinking water data during Rasmata Onlus mapping campaign.
@@ -19,3 +20,6 @@ Apache Cordova mobile app to off-line collecting drinking water data during Rasm
 - upload images 
 
 
+=======
+# H2OpenApp
+>>>>>>> origin/master
