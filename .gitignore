@@ -1,0 +1,15 @@
+/.idea/
+/foto sfondo/
+/hooks/
+/platforms/
+/plugins/
+/www/css/images/
+/www/css/png_images/
+/www/js/jquery.mobile-1.4.5.min.js
+/www/js/jquery-2.2.2.min.js
+/www/js/zepto.js
+/www/css/jquery.mobile-1.4.5.min.css
+/android-debug.apk alias
+/config.xml
+/npm-debug.log
+
