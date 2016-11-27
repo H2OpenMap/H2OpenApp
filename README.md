@@ -22,7 +22,7 @@ Apache Cordova mobile app to off-line collecting data during Rasmata Onlus drink
 - upload CSV to remote server
 - upload images to remote server
 
-
+As usual Apache Cordova projects, all main files are in www folder, see .gitignore for detail
 
 
 
