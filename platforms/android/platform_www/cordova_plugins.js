@@ -27,34 +27,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/cordova-plugin-camera-with-exif/www/CameraConstants.js",
-        "id": "cordova-plugin-camera-with-exif.Camera",
-        "clobbers": [
-            "Camera"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-camera-with-exif/www/CameraPopoverOptions.js",
-        "id": "cordova-plugin-camera-with-exif.CameraPopoverOptions",
-        "clobbers": [
-            "CameraPopoverOptions"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-camera-with-exif/www/Camera.js",
-        "id": "cordova-plugin-camera-with-exif.camera",
-        "clobbers": [
-            "navigator.camera"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-camera-with-exif/www/CameraPopoverHandle.js",
-        "id": "cordova-plugin-camera-with-exif.CameraPopoverHandle",
-        "clobbers": [
-            "CameraPopoverHandle"
-        ]
-    },
-    {
         "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
         "id": "cordova-plugin-geolocation.geolocation",
         "clobbers": [
@@ -259,6 +231,34 @@ module.exports = [
         "clobbers": [
             "Connection"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-camera-with-exif/www/CameraConstants.js",
+        "id": "cordova-plugin-camera-with-exif.Camera",
+        "clobbers": [
+            "Camera"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-camera-with-exif/www/CameraPopoverOptions.js",
+        "id": "cordova-plugin-camera-with-exif.CameraPopoverOptions",
+        "clobbers": [
+            "CameraPopoverOptions"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-camera-with-exif/www/Camera.js",
+        "id": "cordova-plugin-camera-with-exif.camera",
+        "clobbers": [
+            "navigator.camera"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-camera-with-exif/www/CameraPopoverHandle.js",
+        "id": "cordova-plugin-camera-with-exif.CameraPopoverHandle",
+        "clobbers": [
+            "CameraPopoverHandle"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -269,13 +269,13 @@ module.exports.metadata =
     "cordova-plugin-console": "1.0.2",
     "cordova-plugin-dialogs": "1.2.0",
     "cordova-plugin-compat": "1.0.0",
-    "cordova-plugin-camera-with-exif": "1.1.3",
     "cordova-plugin-geolocation": "2.2.0",
     "cordova-plugin-file": "4.2.0",
     "cordova-plugin-file-transfer": "1.5.1",
     "cordova-plugin-splashscreen": "3.2.2",
     "cordova-plugin-crop": "0.1.0",
-    "cordova-plugin-network-information": "1.2.1"
+    "cordova-plugin-network-information": "1.2.1",
+    "cordova-plugin-camera-with-exif": "1.1.5"
 };
 // BOTTOM OF METADATA
 });

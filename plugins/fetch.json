@@ -31,14 +31,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-camera-with-exif": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-camera-with-exif"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-compat": {
         "source": {
             "type": "registry",
@@ -104,5 +96,13 @@
         "variables": {
             "REVERSED_CLIENT_ID": "271244803697-7vlssj6u7j4mgv29d75gdd7c7mofsr2i.apps.googleusercontent.com"
         }
+    },
+    "cordova-plugin-camera-with-exif": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-camera-with-exif"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>H2OpenMap</title>
@@ -298,7 +299,8 @@
                 </div>
                 <div class="ui-field-contain">
                     <label for="usname">user name<span style="color:red;">*</span> (H2OpenMap source field)</label>
-                    <input type="text" id="usname" placeholder="user name" class="required" minlength="5" value="">
+                    <input type="text" id="usname" placeholder="user name" class="required" pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+" aria-required="true" aria-describedby="usname-format" minlength="5" value="">
+                    <span id="usname-format" class="help">special characters forbidden</span>
                 </div>
                 <div class="ui-field-contain">
                     <label for="pass">password<span style="color:red;">*</span></label>
@@ -316,7 +318,7 @@
                 <p style="text-align: center;"><strong>optional fields</strong></p>
                 <div class="ui-field-contain">
                     <label for="name">name</label>
-                    <input type="text" id="name" data-clear-btn="true" placeholder="given name" value="">
+                    <input type="text" id="name" data-clear-btn="true" placeholder="given name" value="" >
                 </div>
                 <div class="ui-field-contain">
                     <label for="famname">family name</label>
@@ -342,7 +344,7 @@
                     <label for="us_note">note</label>
                     <textarea id="us_note" maxlength="100" data-clear-btn="true" placeholder="additional informations">info</textarea>
                 </div>
-                <button id="signup" onclick="singUp(); return false;">Create an Account</button>
+                <button value="Submit" id="signup" onclick="singUp(); return false;" on>Create an Account</button>
             </form>
         </div>
     </div>

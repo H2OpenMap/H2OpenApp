@@ -19,9 +19,6 @@
         "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.yourname.workshop"
         },
-        "cordova-plugin-camera-with-exif": {
-            "PACKAGE_NAME": "com.yourname.workshop"
-        },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.yourname.workshop"
         },
@@ -38,6 +35,9 @@
             "PACKAGE_NAME": "com.rasmata.h2openapp"
         },
         "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.rasmata.h2openapp"
+        },
+        "cordova-plugin-camera-with-exif": {
             "PACKAGE_NAME": "com.rasmata.h2openapp"
         }
     },

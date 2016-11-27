@@ -175,3 +175,11 @@ progress::-webkit-progress-bar-value {
     background-color: #38c;
 }
 
+.help {
+    display:none;
+    font-size:90%;
+}
+input:focus + .help {
+    display:inline-block;
+}
+
