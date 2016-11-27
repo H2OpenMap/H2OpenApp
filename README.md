@@ -1,5 +1,5 @@
 
-![h2openmap-logo](/res/android/Google_Play.png)
+![h2openmap-logo](http://www.h2openmap.org/icon-regular.png)
 
 
 #H2OpenApp
