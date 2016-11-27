@@ -12,4 +12,6 @@
 /android-debug.apk alias
 /config.xml
 /npm-debug.log
+.DS_Store
+**/.DS_Store
 
