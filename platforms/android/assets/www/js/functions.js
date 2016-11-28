@@ -1,17 +1,17 @@
 //------------------------------------START FUNCTIONS----------------------->>
 function onDeviceReady() {
     var source = '';
+    resetForm();
     //console.log('onDeviceReady done');
-    //setDate();
+    setDate();
     //setMapper();
     setPosition();
     //alertGPS();
-    //checkConnection();
+    checkConnection();
     //alert("navigator.geolocation works well");
     //console.log(navigator.geolocation);
     var db = openDatabase("h2openapp_db", "1.0", "H2OpenApp DB", 2 * 1024 * 1024); // Open SQLite Database
     initDatabase();
-    resetForm();
     //getUser();
     //checkSource();
 }
@@ -37,8 +37,7 @@ function initDatabase() { // Function Call When Page is ready.
 }
 
 function setDate() {
-    var date = new Date();
-    document.getElementById("s_date").value = date;
+    document.getElementById("s_date").value = new Date().toString();
 }
 
 function checkSource() {
@@ -138,7 +137,6 @@ function alertGPS(position) {
 
 //------------------------------------CAMERA----------------------->>
 function getPhoto(edit) {
-    // This iOS/Android only example requires the dialog and the device plugin as well.
     if (edit == 'false') {
         var allowEdit = true;
     }
@@ -151,8 +149,9 @@ function getPhoto(edit) {
         encodingType: Camera.EncodingType.JPEG,
         targetWidth: 1000,
         targetHeight: 1000,
+        correctOrientation:true,
         //popoverOptions: CameraPopoverOptions,
-        saveToPhotoAlbum: true
+        //saveToPhotoAlbum: true
     });
 
     function onSuccess(result) {

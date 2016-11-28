@@ -31,7 +31,7 @@
             <li><a href="#page3" class="ui-btn ui-icon-upload ui-btn-icon-right ui-nodisc-icon ui-alt-icon">upload</a></li>
             <li id="us_1"><a href="#" class="ui-btn ui-icon-user2 ui-btn-icon-right ui-nodisc-icon ui-alt-icon" onclick="showUser(1);">user profile</a></li>
             <!-- <li id="us_2"><a href="#" class="ui-btn ui-icon-user2 ui-btn-icon-right ui-nodisc-icon ui-alt-icon" onclick="usr_showRecords();">show all users</a></li> -->
-            <li id="login"><a href="#page6" class="ui-btn ui-icon-login ui-btn-icon-right ui-nodisc-icon ui-alt-icon">login or register</a></li>
+            <li id="login_menu"><a href="#page6" class="ui-btn ui-icon-login ui-btn-icon-right ui-nodisc-icon ui-alt-icon">login or register</a></li>
             <li id="logout"><a href="#page6" class="ui-btn ui-icon-logout ui-btn-icon-right ui-nodisc-icon ui-alt-icon" onclick="dropUsers()">logout</a></li>
             <li><a href="#page7" class="ui-btn ui-icon-faq ui-btn-icon-right ui-nodisc-icon ui-alt-icon">FAQ </a></li>
             <li><a href="#page8" class="ui-btn ui-icon-terms ui-btn-icon-right ui-nodisc-icon ui-alt-icon">terms and use</a></li>
@@ -77,7 +77,7 @@
         <div data-role="content" class="ui-nodisc-icon ui-alt-icon">
             <form method="get" id="myForm">
                 <div class="ui-field-contain">
-                    <label for="id">id</label>
+                    <label for="data_id">id</label>
                     <input type="text" id="data_id" disabled='disabled'>
                 </div>
                 <div class="ui-field-contain">
@@ -110,7 +110,7 @@
                     </fieldset>
                     <br>
                     <img id="image" style="max-width: 100%; height: auto;" src="" class="ui-corner-all ">
-                    <input type='text' id='photo'>
+                    <input type='text' id='photo' disabled='disabled'>
                     <textarea id="exif" disabled='disabled'></textarea>
                 </div>
                 <div class="ui-field-contain">
@@ -382,7 +382,9 @@
                 <li>getUser() rimosso dalla sequenza di start -> form accessibile -> decidere cosa fare</li>
                 <li>verificare il comportamento del LogIn/Out, SignIn/Out</li>
                 <li>verificare sequenze inserimento/modifica dati</li>
-                <li>se inserisco mail errate o password che non coincidono, mando i dat a db e li salva.... correggere
+                <li>se inserisco mail errate o password che non coincidono, mando i dat a db e li salva.... correggere</li>
+            </ul>
+              li
         </div>
     </div>
 <!--  PAGE 8 TERMS -->
